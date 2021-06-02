@@ -47,4 +47,4 @@ def script_response(script):
         return f"Hola que quieres"
     
     else:
-        return f"Lo siento no te he entendido"
+        return f"Lo siento no te he entendido nada"
