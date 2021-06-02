@@ -25,7 +25,7 @@ SECRET_KEY = '_5^x_m^98kphk=bhu#5sa=0b=*n=#@_ee3)8a)ut*lkx=j++38'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['clau.pythonanywhere.com']
 
 
 # Application definition
@@ -114,6 +114,7 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
 
 
 # Static files (CSS, JavaScript, Images)
