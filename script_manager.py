@@ -83,5 +83,6 @@ def pichichi():
     #print(goles)
     df = pd.DataFrame({'Jugador (equipo)': jugadores, 'Goles': goles}, index=list(range(1,51)))
     print(df)
-    return df
+    return "pichihi"
+    #return df
     #df.to_csv('Pichichi30.csv')
