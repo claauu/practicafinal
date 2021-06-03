@@ -233,7 +233,7 @@ def zamora():
 
 def script_response(script):
     if script == "script_hora" or script== "que hora es":
-        return f"Son las {datetime.now().hour + 2}:{datetime.now().minute}"
+        return f"Son las {datetime.now().hour}:{datetime.now().minute}"
 
     if script == "script_numero_aleatorio" or script== "dime un numero aleatorio":
         return str(random.randrange(100))
@@ -268,6 +268,10 @@ def script_response(script):
     
     if script=="hola":
         return f"Hola que quieres"
+
+    
+    if script=="adios":
+        return f"Adios ten cuidado"
     
     else:
         return f"Lo siento no te he entendido nada"
