@@ -5,6 +5,9 @@ import TopInstagram
 import TopYouTube
 import Pichichi
 import Zamora
+from bs4 import  BeautifulSoup
+import requests
+import pandas as pd
 from datetime import datetime
 
 
@@ -31,7 +34,7 @@ def script_response(script):
         return f"Estas son las cuentas con mas seguidores en Instagram: <br> {salto1}"
 
     if script == "script_pichichi" or script=="quien es el pichichi":  
-        return f"Estos son los maximos goleadores: <br> {Pichichi.pichichi()}"  
+        return f"Estos son los maximos goleadores: <br> {pichichi()}"  
 
     if script == "script_youtube" or script=="quienes son los mas seguidos en youtube": 
         salto3 = ' '
@@ -48,3 +51,37 @@ def script_response(script):
     
     else:
         return f"Lo siento no te he entendido nada"
+    
+
+def pichichi():
+
+    url = 'https://www.marca.com/futbol/primera-division/pichichi.html'
+    page = requests.get(url)
+    soup = BeautifulSoup(page.content, 'html.parser')
+
+    #Jugadores - Equipo
+    jug = soup.find_all('th', class_='ue-table-trophies__th is-main')
+
+    jugadores = list()
+
+    for i in jug:
+        jugadores.append(i.text)
+
+    #print(jugadores)
+
+    #Goles totales
+    gol = soup.find_all('td', class_='ue-table-trophies__td is-marked')
+
+    goles = list()
+
+    for i in gol:
+        goles.append(i.text)
+
+    #print(goles)
+
+
+    #print(goles)
+    df = pd.DataFrame({'Jugador (equipo)': jugadores, 'Goles': goles}, index=list(range(1,51)))
+    print(df)
+    return df
+    #df.to_csv('Pichichi30.csv')
