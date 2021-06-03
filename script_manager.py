@@ -12,8 +12,12 @@ from datetime import datetime
 
 def pichichi():
 
+    proxies = {"http": "http://10.10.1.10:3128/",
+           "https": "http://10.10.1.10:1080"}
+
+    
     url = 'https://www.marca.com/futbol/primera-division/pichichi.html'
-    page = requests.get(url)
+    page = requests.get(url, proxies=proxies)
     soup = BeautifulSoup(page.content, 'html.parser')
 
     #Jugadores - Equipo
@@ -43,6 +47,8 @@ def pichichi():
    
     return df
     #df.to_csv('Pichichi30.csv')
+
+
 
 
 def script_response(script):
