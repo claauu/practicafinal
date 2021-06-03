@@ -69,6 +69,7 @@ def script_response(script):
 
     if script == "script_pichichi" or script=="quien es el pichichi":  
         df=pichichi()
+        print(df)
         return f"Estos son los maximos goleadores: <br> {df}"  
 
     if script == "script_youtube" or script=="quienes son los mas seguidos en youtube": 
