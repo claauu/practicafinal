@@ -232,10 +232,10 @@ def zamora():
     return df
 
 def script_response(script):
-    if script == "script_hora":
+    if script == "script_hora" or script== "que hora es":
         return f"Son las {datetime.now().hour}:{datetime.now().minute}"
 
-    if script == "script_numero_aleatorio":
+    if script == "script_numero_aleatorio" or script== "dime un numero aleatorio":
         return str(random.randrange(100))
 
 
