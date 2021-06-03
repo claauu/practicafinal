@@ -274,6 +274,6 @@ def script_response(script):
         return f"Adios ten cuidado"
     
     else:
-        return f"Lo siento no te he entendido nada"
+        return f"Lo siento no te he entendido"
     
 
